@@ -17,8 +17,9 @@ public class Employee implements Serializable {
     @Column(nullable = false, updatable = false)
     private String employeeCode;
 
-    public Employee(Long id, String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
-        this.id = id;
+    public Employee() {}
+
+    public Employee(String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
         this.name = name;
         this.email = email;
         this.jobTitle = jobTitle;
@@ -83,6 +84,7 @@ public class Employee implements Serializable {
         this.employeeCode = employeeCode;
     }
 
+    @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
@@ -91,7 +93,6 @@ public class Employee implements Serializable {
                 ", jobTitle='" + jobTitle + '\'' +
                 ", phone='" + phone + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
-                "}";
-
+                '}';
     }
 }
